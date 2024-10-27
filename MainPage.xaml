@@ -8,7 +8,6 @@
              Padding="30">
 
     <StackLayout>
-        
-    </StackLayout>
+            </StackLayout>
 
 </ContentPage>

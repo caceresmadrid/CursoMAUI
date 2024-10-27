@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CursoMAUI.Pages.FlyoutMenuPage"
+              xmlns:local="clr-namespace:CursoMAUI.Pages"
+             xmlns:local1="clr-namespace:CursoMAUI.Data"
+             Title="FlyoutMenuPage"
+             Padding="0,40,0,0"
+             IconImageSource="hanburguer.png">
+    <CollectionView x:Name="collectionView"
+                    x:FieldModifier="public"
+                    SelectionMode="Single">
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type local1:FlyoutPageItem}">
+                <local1:FlyoutPageItem Titulo="Contactos"
+                                       RutaImagen="contacto.png"
+                                       TargetType="{x:Type local:Pagina1}"/>
+                <local1:FlyoutPageItem Titulo="Lista de Tareas"
+                         RutaImagen="listadetareas.png"
+                         TargetType="{x:Type local:Pagina1}"/>
+                <local1:FlyoutPageItem Titulo="Recordatorios"
+                         RutaImagen="recordatorios.png"
+                         TargetType="{x:Type local:Pagina1}"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="5,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding RutaImagen}"/>
+                    <Label Grid.Column="1"
+                           Margin="20,0"
+                           Text="{Binding Titulo}"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

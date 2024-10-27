@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:CursoMAUI.Pages"
+            x:Class="CursoMAUI.Pages.FlyoutPageT"
+            Title="FlyoutPageT">
+
+    <!-- Configuración del menú desplegable (Flyout) -->
+    <FlyoutPage.Flyout>
+        <local:FlyoutMenuPage x:Name="flyoutPage" />
+    </FlyoutPage.Flyout>
+
+    <!-- Configuración de la página de contenido principal (Detail) -->
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:Pagina1 />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+
+</FlyoutPage>
